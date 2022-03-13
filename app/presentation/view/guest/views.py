@@ -16,6 +16,8 @@ def register():
         memail.set_base_url(current_url)
         code = request.args['code'] if 'code' in request.args else None
         ret = prepare_registration_form(code)
+        if ret.result == ret.Result.E_TIMESLOT_REGISTRATION_DISABLED:
+            return render_template('guest/messages.html', type='timeslot-registration-disabled')
         if ret.result == ret.Result.E_COULD_NOT_REGISTER:
             return render_template('guest/messages.html', type='could-not-register')
         if ret.result == ret.Result.E_NO_TIMESLOT:

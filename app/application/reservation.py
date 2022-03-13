@@ -8,6 +8,9 @@ import datetime, json, sys
 
 def prepare_reservation(code=None):
     try:
+        timeslot_registration_enabled = msettings.get_configuration_setting('generic-enable-timeslot-registration')
+        if not timeslot_registration_enabled:
+            return RegisterResult(RegisterResult.Result.E_TIMESLOT_REGISTRATION_DISABLED, None)
         if 'new' == code:
             empty_values = {
             'phone': '',
@@ -210,6 +213,7 @@ class RegisterResult:
         E_COULD_NOT_REGISTER = 'could-not-register'
         E_TIMESLOT_FULL = 'timeslot-full'
         E_NO_TIMESLOT = 'no-timeslot'
+        E_TIMESLOT_REGISTRATION_DISABLED = 'timeslot-registration-disabled'
 
     result = Result.E_OK
     ret = {}

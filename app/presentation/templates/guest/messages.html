@@ -50,6 +50,15 @@
                     </div>
                 {% endif %}
 
+                {% if type =='timeslot-registration-disabled' %}
+                    <div class="alert alert-danger" role="alert">
+                        <h4 class="alert-heading">Foutmelding!</h4>
+                        <h5>Het is niet mogelijk om een tijdslot te reserveren</h5>
+                        <h5>de site is gesloten.</h5>
+                        <hr>
+                    </div>
+                {% endif %}
+
                 {% if type =='could-not-cancel' %}
                     <div class="alert alert-danger" role="alert">
                         <h4 class="alert-heading">Foutmelding!</h4>

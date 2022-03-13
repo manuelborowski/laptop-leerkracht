@@ -158,6 +158,14 @@ settings_formio = \
                 "type": "columns",
                 "input": false,
                 "tableView": false
+              },
+              {
+                "label": "Het is mogelijk een tijdslot te reserveren",
+                "tableView": false,
+                "key": "generic-enable-timeslot-registration",
+                "type": "checkbox",
+                "input": true,
+                "defaultValue": false
               }
             ],
             "collapsed": true

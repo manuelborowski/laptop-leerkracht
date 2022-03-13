@@ -46,10 +46,11 @@ flask_app.config.from_pyfile('config.py')
 # V0.24: refactored callbacks in some Guest settings
 # V0.25: implemented cancel-registration-mail
 # V0.26: send cancel-registration-mail when guest pushes cancel registration button
+# V0.27: add setting: enable timeslot registration
 
 @flask_app.context_processor
 def inject_defaults():
-    return dict(version='V0.26', title=flask_app.config['HTML_TITLE'], site_name=flask_app.config['SITE_NAME'])
+    return dict(version='V0.27', title=flask_app.config['HTML_TITLE'], site_name=flask_app.config['SITE_NAME'])
 
 
 #  enable logging

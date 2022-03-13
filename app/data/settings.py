@@ -52,6 +52,8 @@ def get_test_server():
 
 
 default_configuration_settings = {
+    'generic-enable-timeslot-registration': (False, Settings.SETTING_TYPE.E_BOOL),
+
     'register-template': ('', Settings.SETTING_TYPE.E_STRING),
     'register-ack-template': ('', Settings.SETTING_TYPE.E_STRING),
     'invite-mail-subject-template': ('', Settings.SETTING_TYPE.E_STRING),
@@ -69,6 +71,7 @@ default_configuration_settings = {
     'email-send-max-retries': (2, Settings.SETTING_TYPE.E_INT),
 
     'base-url': ('localhost:5000', Settings.SETTING_TYPE.E_STRING),
+
 
     'enable-send-invite-email': (False, Settings.SETTING_TYPE.E_BOOL),
     'enable-send-ack-email': (False, Settings.SETTING_TYPE.E_BOOL),
