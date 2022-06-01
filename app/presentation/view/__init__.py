@@ -31,9 +31,9 @@ def update_template(template, new):
     child_name['disabled'] = not new
     email = search_component(template, 'email')
     email['disabled'] = not new
-    show_phone = msettings.get_configuration_setting('import-phone-field') != ''
-    phone = search_component(template, 'phone')
-    phone['hidden'] = not show_phone and not new
+    # show_phone = msettings.get_configuration_setting('import-phone-field') != ''
+    # phone = search_component(template, 'phone')
+    # phone['hidden'] = not show_phone and not new
     show_name = msettings.get_configuration_setting('import-parentname-field') != ''
     parent_name = search_component(template, 'full_name')
     parent_name['hidden'] = not show_name and not new

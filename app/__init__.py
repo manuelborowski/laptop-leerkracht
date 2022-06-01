@@ -20,37 +20,11 @@ config_name = config_name if config_name else 'production'
 flask_app.config.from_object(app_config[config_name])
 flask_app.config.from_pyfile('config.py')
 
-# V0.1: copy from redeem-voucher V0.21
-# V0.2: made generic adaptations
-# V0.3: update systemfiles
-# V0.4: make more generic
-# V0.5: send all invite emails button did not work
-# V0.6: reworked the reservations-list
-# V0.7: small bugfix
-# V0.8: added miscellaneous fields
-# V0.9: small bugfix, default JSON value should be {}
-# V0.10: enable search in misc_field
-# V0.11: bugfix to make new reservations possible
-# V0.12: small bugfix
-# V0.13: remove yellow row color when invite or ack mail is sent
-# V0.14: small bugfix with counters.  Added invitation reminder mail prefix
-# V0.15: escape url specific characters in data
-# V0.16: bugfix: when adding a new but empty reservation, show error
-# V0.17: update in logging: add correct app name
-# V0.18: update in title of registration form
-# V0.19: update in favicon of registration form
-# V0.20: registration-ok html form can be set via admin settings
-# V0.21: added message no-timeslot
-# V0.22: bugifx timeslot-list
-# V0.23: log when registration is cancelled
-# V0.24: refactored callbacks in some Guest settings
-# V0.25: implemented cancel-registration-mail
-# V0.26: send cancel-registration-mail when guest pushes cancel registration button
-# V0.27: add setting: enable timeslot registration
+# V0.1: copy from generic-timeslot V0.27
 
 @flask_app.context_processor
 def inject_defaults():
-    return dict(version='V0.27', title=flask_app.config['HTML_TITLE'], site_name=flask_app.config['SITE_NAME'])
+    return dict(version='V0.1', title=flask_app.config['HTML_TITLE'], site_name=flask_app.config['SITE_NAME'])
 
 
 #  enable logging

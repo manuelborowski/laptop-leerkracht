@@ -62,7 +62,8 @@ def add_or_update_reservation(data, suppress_send_ack_email=False):
         code = data['reservation-code']
         timeslot = formiodate_to_datetime(data['radio-timeslot'])
         if 'new' == code:
-            if data['email'] == '' or data['child_name'] == '':
+            # if data['email'] == '' or data['child_name'] == '':
+            if data['email'] == '':
                 return RegisterResult(RegisterResult.Result.E_COULD_NOT_REGISTER)
             if not check_requested_timeslot(timeslot):
                 ret = {'reservation-code': 'new'}
